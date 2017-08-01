@@ -19,11 +19,11 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
-  database: ci-test-and-deploy-to-ec2-capistrano_development
+  database: rails-ci-testing-and-deployment-to-ec2-capistrano-capistrano_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ci-test-and-deploy-to-ec2-capistrano_test
+  database: rails-ci-testing-and-deployment-to-ec2-capistrano_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: ci-test-and-deploy-to-ec2-capistrano_production
-  username: ci-test-and-deploy-to-ec2-capistrano
-  password: <%= ENV['CI-TEST-AND-DEPLOY-TO-EC2-CAPISTRANO_DATABASE_PASSWORD'] %>
+  database: rails-ci-testing-and-deployment-to-ec2-capistrano_production
+  username: jparker
+  password: it4Gpg&p
+  host: localhost
+  port: 5432
