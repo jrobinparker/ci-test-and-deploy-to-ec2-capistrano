@@ -1,0 +1,5 @@
+{
+  "name": "ci-test-and-deploy-to-ec2-capistrano",
+  "private": true,
+  "dependencies": {}
+}
